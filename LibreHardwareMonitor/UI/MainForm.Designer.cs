@@ -48,7 +48,8 @@ namespace LibreHardwareMonitor.UI
             this.nodeTextBoxValue = new Aga.Controls.Tree.NodeControls.NodeTextBox();
             this.nodeTextBoxMin = new Aga.Controls.Tree.NodeControls.NodeTextBox();
             this.nodeTextBoxMax = new Aga.Controls.Tree.NodeControls.NodeTextBox();
-            this.mainMenu = new MenuStrip(); // this.components);
+            this.mainMenu = new MenuStrip();
+            this.Controls.Add(this.mainMenu);
             this.fileMenuItem = new ToolStripMenuItem();
             this.saveReportMenuItem = new ToolStripMenuItem();
             this.MenuItem2 = new ToolStripSeparator();
