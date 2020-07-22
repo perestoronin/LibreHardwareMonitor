@@ -377,7 +377,7 @@ namespace LibreHardwareMonitor.UI
             }
         }
 
-        public ContextMenu ContextMenu { get; set; }
+        public ContextMenuStrip ContextMenu { get; set; }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         private struct BlendFunction

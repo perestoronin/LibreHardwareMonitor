@@ -4,12 +4,12 @@
 // Partial Copyright (C) Michael Möller <mmoeller@openhardwaremonitor.org> and Contributors.
 // All Rights Reserved.
 
-using System.Management.Instrumentation;
+// using System.Management.Instrumentation; // TODO
 using LibreHardwareMonitor.Hardware;
 
 namespace LibreHardwareMonitor.Wmi
 {
-    [InstrumentationClass(InstrumentationType.Instance)]
+//    [InstrumentationClass(InstrumentationType.Instance)] // TODO
     public class Sensor : IWmiObject
     {
         private readonly ISensor _sensor;

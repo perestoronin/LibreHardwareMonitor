@@ -6,12 +6,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.Management.Instrumentation;
+// using System.Management.Instrumentation; // TODO
 using LibreHardwareMonitor.Hardware;
 
-[assembly: Instrumented("root/LibreHardwareMonitor")]
-[System.ComponentModel.RunInstaller(true)]
-public class InstanceInstaller : DefaultManagementProjectInstaller { }
+// [assembly: Instrumented("root/LibreHardwareMonitor")] // TODO
+// [System.ComponentModel.RunInstaller(true)] // TODO
+// public class InstanceInstaller : DefaultManagementProjectInstaller { } // TODO
 
 namespace LibreHardwareMonitor.Wmi
 {
@@ -57,7 +57,7 @@ namespace LibreHardwareMonitor.Wmi
 
                 try
                 {
-                    Instrumentation.Publish(hw);
+//                    Instrumentation.Publish(hw); / TODO
                 }
                 catch { }
             }
@@ -73,7 +73,7 @@ namespace LibreHardwareMonitor.Wmi
 
             try
             {
-                Instrumentation.Publish(sensor);
+//                Instrumentation.Publish(sensor); // TODO
             }
             catch { }
         }
@@ -117,7 +117,7 @@ namespace LibreHardwareMonitor.Wmi
 
             try
             {
-                Instrumentation.Revoke(_activeInstances[instanceIndex]);
+//                Instrumentation.Revoke(_activeInstances[instanceIndex]); // TODO
             }
             catch { }
 
@@ -132,7 +132,7 @@ namespace LibreHardwareMonitor.Wmi
             {
                 try
                 {
-                    Instrumentation.Revoke(instance);
+                    // Instrumentation.Revoke(instance); // TODO
                 }
                 catch { }
             }

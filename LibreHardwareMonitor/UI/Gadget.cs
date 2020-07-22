@@ -114,7 +114,7 @@ namespace LibreHardwareMonitor.UI
             }
         }
 
-        public ContextMenu ContextMenu
+        public ContextMenuStrip ContextMenu
         {
             get
             {

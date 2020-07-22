@@ -230,7 +230,7 @@ namespace LibreHardwareMonitor.Hardware
                 var allowEveryoneRule = new MutexAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null), MutexRights.FullControl, AccessControlType.Allow);
                 var securitySettings = new MutexSecurity();
                 securitySettings.AddAccessRule(allowEveryoneRule);
-                _isaBusMutex = new Mutex(false, isaMutexName, out _, securitySettings);
+                _isaBusMutex = new Mutex(false, isaMutexName, out _);
 #endif
             }
             catch (UnauthorizedAccessException)
@@ -240,7 +240,7 @@ namespace LibreHardwareMonitor.Hardware
 #if NETSTANDARD2_0
                     _isaBusMutex = Mutex.OpenExisting(isaMutexName);
 #else
-                    _isaBusMutex = Mutex.OpenExisting(isaMutexName, MutexRights.Synchronize);
+                    _isaBusMutex = Mutex.OpenExisting(isaMutexName);
 #endif
                 }
                 catch
@@ -260,7 +260,7 @@ namespace LibreHardwareMonitor.Hardware
 #if NETSTANDARD2_0
                     _pciBusMutex = Mutex.OpenExisting(pciMutexName);
 #else
-                    _pciBusMutex = Mutex.OpenExisting(pciMutexName, MutexRights.Synchronize);
+                    _pciBusMutex = Mutex.OpenExisting(pciMutexName);
 #endif
                 }
                 catch

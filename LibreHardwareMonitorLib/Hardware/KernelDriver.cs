@@ -83,9 +83,10 @@ namespace LibreHardwareMonitor.Hardware
             {
                 // restrict the driver access to system (SY) and builtin admins (BA)
                 // TODO: replace with a call to IoCreateDeviceSecure in the driver
-                FileSecurity fileSecurity = File.GetAccessControl(@"\\.\" + _id);
+                FileInfo fileInfo = new FileInfo(@"\\.\" + _id);
+                FileSecurity fileSecurity = FileSystemAclExtensions.GetAccessControl(fileInfo);
                 fileSecurity.SetSecurityDescriptorSddlForm("O:BAG:SYD:(A;;FA;;;SY)(A;;FA;;;BA)");
-                File.SetAccessControl(@"\\.\" + _id, fileSecurity);
+                FileSystemAclExtensions.SetAccessControl(fileInfo, fileSecurity);
             }
             catch
             { }

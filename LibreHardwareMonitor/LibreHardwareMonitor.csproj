@@ -1,25 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
     <ProjectUId>{F5E0C1F7-9E9B-46F2-AC88-8C9C1C923880}</ProjectUId>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <OutputType>WinExe</OutputType>
     <RuntimeIdentifiers>win</RuntimeIdentifiers>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>LibreHardwareMonitor</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <RootNamespace>LibreHardwareMonitor</RootNamespace>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
     <StartupObject>LibreHardwareMonitor.Program</StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -35,138 +25,56 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-    <ProjectGuid>{F5E0C1F7-9E9B-46F2-AC88-8C9C1C923880}</ProjectGuid>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.8.15.0, Culture=neutral, PublicKeyToken=c416bc1b32d97233, processorArchitecture=MSIL">
-      <HintPath>..\packages\TaskScheduler.2.8.15\lib\net452\Microsoft.Win32.TaskScheduler.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="OxyPlot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
-      <HintPath>..\packages\OxyPlot.Core.1.0.0\lib\net45\OxyPlot.dll</HintPath>
-    </Reference>
-    <Reference Include="OxyPlot.WindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=245eacd6b5d2d338, processorArchitecture=MSIL">
-      <HintPath>..\packages\OxyPlot.WindowsForms.1.0.0\lib\net45\OxyPlot.WindowsForms.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration.Install" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\LibreHardwareMonitorLib\Properties\AssemblyVersion.cs">
       <Link>Properties\AssemblyVersion.cs</Link>
     </Compile>
-    <Compile Include="UI\AuthForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\AuthForm.Designer.cs">
+    <Compile Update="UI\AuthForm.cs" />
+    <Compile Update="UI\AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\IExpandPersistNode.cs" />
-    <Compile Include="UI\ScaledPlotModel.cs" />
-    <Compile Include="UI\GadgetWindow.cs" />
-    <Compile Include="UI\Gadget.cs" />
-    <Compile Include="UI\HardwareTypeImage.cs" />
-    <Compile Include="UI\NotifyIconAdv.cs" />
-    <Compile Include="UI\PlotPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\PortForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\PortForm.Designer.cs">
+    <Compile Update="UI\PlotPanel.cs" />
+    <Compile Update="UI\PortForm.cs" />
+    <Compile Update="UI\PortForm.Designer.cs">
       <DependentUpon>PortForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Node.cs" />
-    <Compile Include="UI\ParameterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\ParameterForm.Designer.cs">
+    <Compile Update="UI\ParameterForm.cs" />
+    <Compile Update="UI\ParameterForm.Designer.cs">
       <DependentUpon>ParameterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\SensorGadget.cs" />
-    <Compile Include="UI\SensorNotifyIcon.cs" />
-    <Compile Include="UI\ShowDesktop.cs" />
-    <Compile Include="UI\SplitContainerAdv.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\SystemTray.cs" />
-    <Compile Include="UI\StartupManager.cs" />
-    <Compile Include="UI\TreeModel.cs" />
-    <Compile Include="UI\TypeNode.cs" />
-    <Compile Include="UI\UnitManager.cs" />
-    <Compile Include="UI\UpdateVisitor.cs" />
-    <Compile Include="UI\UserOption.cs" />
-    <Compile Include="UI\UserRadioGroup.cs" />
-    <Compile Include="Utilities\HttpServer.cs" />
-    <Compile Include="Utilities\Logger.cs" />
-    <Compile Include="Utilities\PersistentSettings.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\AboutBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\AboutBox.Designer.cs">
+    <Compile Update="UI\SplitContainerAdv.cs" />
+    <Compile Update="UI\AboutBox.cs" />
+    <Compile Update="UI\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\HardwareNode.cs" />
-    <Compile Include="UI\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\MainForm.Designer.cs">
+    <Compile Update="UI\MainForm.cs" />
+    <Compile Update="UI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="UI\SensorNode.cs" />
-    <Compile Include="Utilities\EmbeddedResources.cs" />
-    <Compile Include="Utilities\IconFactory.cs" />
-    <Compile Include="WMI\Hardware.cs" />
-    <Compile Include="WMI\IWmiObject.cs" />
-    <Compile Include="WMI\Sensor.cs" />
-    <Compile Include="WMI\WmiProvider.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Update="WMI\WmiProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UI\AboutBox.resx">
+    <EmbeddedResource Update="UI\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\AuthForm.resx">
+    <EmbeddedResource Update="UI\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\PortForm.resx">
+    <EmbeddedResource Update="UI\PortForm.resx">
       <DependentUpon>PortForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\clock.png" />
@@ -184,17 +92,15 @@
     <EmbeddedResource Include="Resources\nic.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="Resources\app.manifest">
+    <None Update="Resources\app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\smallicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UI\ParameterForm.resx">
+    <EmbeddedResource Update="UI\ParameterForm.resx">
       <DependentUpon>ParameterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\flow.png" />
@@ -203,21 +109,15 @@
     <EmbeddedResource Include="Resources\mainboard.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UI\MainForm.resx">
+    <EmbeddedResource Update="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\control.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aga.Controls\Aga.Controls.csproj">
-      <Project>{e73bb233-d88b-44a7-a98f-d71ee158381d}</Project>
-      <Name>Aga.Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LibreHardwareMonitorLib\LibreHardwareMonitorLib.csproj">
-      <Project>{B0397530-545A-471D-BB74-027AE456DF1A}</Project>
-      <Name>LibreHardwareMonitorLib</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Aga.Controls\Aga.Controls.csproj" />
+    <ProjectReference Include="..\LibreHardwareMonitorLib\LibreHardwareMonitorLib.csproj" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -311,14 +211,20 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Web\favicon.ico" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.1.0" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="OxyPlot.WindowsForms">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="TaskScheduler">
+      <Version>2.8.20</Version>
+    </PackageReference>
+  </ItemGroup>
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
   </ProjectExtensions>
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+  <PropertyGroup />
 </Project>
